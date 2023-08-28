@@ -1,0 +1,223 @@
+<style>
+.campo {
+    margin-block: 0.5em;
+}
+.column {
+    width: 50%;
+}
+.label {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    font-weight: bold;
+}
+.comparador {
+    display: inline-block;
+    width: 10%;
+}
+
+/* .comparador > select {
+    padding: 0.3em;
+} */
+
+.submit-button {
+    background-color: rgb(255, 147, 75);
+    border: 1px solid rgb(204, 204, 204);
+    padding-block: 0.5em;
+    padding-inline: 2em;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+.submit-button:hover {
+    background-color: rgb(255, 188, 144);
+}
+</style>
+
+
+<form method="POST" action="/registros/formulario">
+
+    <div class="column" style="float: left;">
+        <!-- CODIGO FIPE -->
+        <div class="campo">
+
+            <span class="enable">
+                <input type="checkbox" name="codigoFipe_check" />
+            </span>
+
+            <span class="label">
+                Codigo Fipe
+            </span>
+
+            <span class="comparador">
+                <select name="codigoFipe_comparador">
+                    <option value="==">==</option>
+                    <option value="!=">!=</option>
+                    <option value=">">></option>
+                    <option value=">=">>=</option>
+                    <option value="<"><</option>
+                    <option value="<="><=</option>
+                </select>
+            </span>
+
+            <span class="valor">
+                <input name="codigoFipe_valor" type="number"/>
+            </span>
+
+        </div>
+
+        <!-- MARCA -->
+        <div class="campo">
+
+            <span class="enable">
+                <input type="checkbox" name="marca_check" />
+            </span>
+
+            <span class="label">
+                Marca
+            </span>
+
+            <span class="comparador"></span>
+            
+            <span class="comparador">
+                <select name="marca_comparador">
+                    <option value="==">==</option>
+                    <option value="!=">!=</option>
+                </select>
+            </span>
+            <input name="marca_valor" type="text"/>
+
+        </div>
+
+        <!-- MODELO -->
+        <div class="campo">
+
+            <span class="enable">
+                <input type="checkbox" name="modelo_check" />
+            </span>
+
+            <span class="label">
+                Modelo
+            </span>
+
+            <span class="comparador">
+                <select name="modelo_comparador">
+                    <option value="==">==</option>
+                    <option value="!=">!=</option>
+                </select>
+            </span>
+
+            <input name="nota_sem_1_valor" type="number"/>
+
+        </div>
+
+        <!-- ANO MODELO -->
+        <div class="campo">
+
+            <span class="enable">
+                <input type="checkbox" name="anoModelo_check" />
+            </span>
+
+            <span class="label">
+                Ano Modelo
+            </span>
+
+            <span class="comparador">
+                <select name="anoModelo_comparador">
+                    <option value="==">==</option>
+                    <option value="!=">!=</option>
+                    <option value=">">></option>
+                    <option value=">=">>=</option>
+                    <option value="<"><</option>
+                    <option value="<="><=</option>
+                </select>
+            </span>
+
+            <input name="nota_sem_2_valor" type="number"/>
+
+        </div>
+    </div>
+
+    <div class="column" style="float: right;">
+        <!-- MES REFERENCIA -->
+        <div class="campo">
+
+            <span class="enable">
+                <input type="checkbox" name="mesReferencia_check" />
+            </span>
+
+            <span class="label">
+                Mes Referencia
+            </span>
+
+            <span class="comparador">
+                <select name="mesReferencia_comparador">
+                    <option value="==">==</option>
+                    <option value="!=">!=</option>
+                    <option value=">">></option>
+                    <option value=">=">>=</option>
+                    <option value="<"><</option>
+                    <option value="<="><=</option>
+                </select>
+            </span>
+
+            <input name="mesReferencia_valor" type="number"/>
+
+        </div>
+
+        <!-- ANO REFERENCIA -->
+        <div class="campo">
+
+            <span class="enable">
+                <input type="checkbox" name="anoReferencia_check" />
+            </span>
+
+            <span class="label">
+                Ano Referencia
+            </span>
+
+            <span class="comparador">
+                <select name="anoReferencia_comparador">
+                    <option value="==">==</option>
+                    <option value="!=">!=</option>
+                    <option value=">">></option>
+                    <option value=">=">>=</option>
+                    <option value="<"><</option>
+                    <option value="<="><=</option>
+                </select>
+            </span>
+
+            <input name="anoReferencia_valor" type="number"/>
+
+        </div>
+
+        <!-- VALOR -->
+        <div class="campo">
+
+            <span class="enable">
+                <input type="checkbox" name="valor_check" />
+            </span>
+
+            <span class="label">
+                Valor
+            </span>
+
+            <span class="comparador">
+                <select name="valor_comparador">
+                    <option value="==">==</option>
+                    <option value="!=">!=</option>
+                    <option value=">">></option>
+                    <option value=">=">>=</option>
+                    <option value="<"><</option>
+                    <option value="<="><=</option>
+                </select>
+            </span>
+
+        </div>
+    </div>
+
+    <div style="width: 100%; float: left;">
+        <!-- SUBMIT BUTTON -->
+        <input type="submit" value="Filtrar" class="submit-button"/>
+    </div>
+
+</form>

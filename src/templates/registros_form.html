@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Resultados</title>
+
+        <style>
+            body {
+                margin: 0;
+            }
+            .container {
+                width: 80%;
+                margin-left: 10%;
+            }
+            
+            /**/
+            #geral {
+                margin-block: 1em;
+                margin-bottom: 0em;
+            }
+
+            #formulario {
+                float: left;
+                margin-block: 1em;
+            }
+            
+            /* tabela */
+            .table-result {
+                text-align: center;
+                margin: 0 auto;
+            }
+            .table-header > th {
+                background-color: rgb(255, 147, 75);
+                padding: 0.5em;
+                width: 120px;
+            }
+            .table-data > td {
+                padding-block: 0.5em;
+            }
+
+            tr:hover {
+                background-color: rgb(43, 56, 91);
+                color: white;
+            }
+        </style>
+
+    </head>
+    <body>
+        {% include 'header.html' %}
+
+        <div class="container">
+
+            <div id="geral">
+                <h2>Resultado</h2>
+                <span style="font-weight: bold;">Registros: </span> {{ registros|length }} recuperados
+            </div>
+
+            <div id="formulario">
+                {% include 'registros_form.html' %}
+            </div>
+
+            <div id="dados">
+
+                <table class="table-result">
+                    <tr class="table-header">
+                        <th>Codigo Fipe</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Ano Modelo</th>
+                        <th>Mes Referencia</th>
+                        <th>Ano Referencia</th>
+                        <th>Valor</th>
+                    </tr>
+    
+                    {% for index, registros in registros.iterrows(): %}
+                    <tr class="table-data">
+                        <td>{{ registros['codigoFipe'] }}</td>
+                        <td>{{ registros['marca'] }}</td>
+                        <td>{{ registros['modelo'] }}</td>
+                        <td>{{ registros['ano_modelo'] }}</td>
+                        <td>{{ registros['mesReferencia'] }}</td>
+                        <td>{{ registros['anoReferencia'] }}</td>
+                        <td>{{ registros['valor'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
